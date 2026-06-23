@@ -222,6 +222,8 @@ repo link, server URLs, config snapshot) emailed via a **pluggable sender** — 
 API (OAuth) by default, **SMTP fallback** — both routed through the Gatekeeper. See
 the committed [`reports/sample_report.json`](reports/sample_report.json) and the
 per-move dispute log [`moves.jsonl`](reports/transcripts/sample/moves.jsonl).
+To wire the real Gmail send (OAuth client + token), follow
+[`docs/GMAIL_SETUP.md`](docs/GMAIL_SETUP.md).
 
 ## 7. Security & remote deployment (H8)
 
