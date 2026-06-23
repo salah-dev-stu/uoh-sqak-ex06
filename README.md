@@ -85,7 +85,7 @@ the LLM)** talking to the **two FastMCP servers**, with a message dot tracing ea
 turn — observation/prompt out, free-NL message + action back. It surfaces the graded
 separation (**LLM in the client, two stateless servers** — H1/H3) as you watch.
 
-<p align="center"><img src="assets/viewer/mcp-flow.png" width="360" alt="MCP message-flow inset"></p>
+<p align="center"><img src="assets/viewer/mcp-flow.png" width="520" alt="MCP message-flow inset"></p>
 
 **Open it — zero setup, two ways:**
 ```bash
