@@ -34,25 +34,25 @@
 
   B._add = function (cell, animate) {
     var w = P.util.tileToWorld(cell[0], cell[1], B.grid);
-    var geo = new THREE.BoxGeometry(0.86, 1.05, 0.86);
-    // A translucent neon force-field, not a solid block: you can see through it,
-    // and the bright wireframe + horizontal bars read as a shutter/wall.
+    var geo = new THREE.BoxGeometry(0.84, 1.02, 0.84);
+    // A neon CAGE: a faint glowing core framed by bright wireframe edges and a ring
+    // of vertical bars around the cell — clearly "this cell is blocked" from any angle.
     var mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
-      color: 0x0c2630, emissive: P.util.colors.neon, emissiveIntensity: 0.35,
-      transparent: true, opacity: 0.32, metalness: 0.3, roughness: 0.4, depthWrite: false,
+      color: 0x0c2a34, emissive: P.util.colors.neon, emissiveIntensity: 0.45,
+      transparent: true, opacity: 0.22, metalness: 0.3, roughness: 0.4, depthWrite: false,
     }));
     mesh.add(new THREE.LineSegments(
       new THREE.EdgesGeometry(geo),
-      new THREE.LineBasicMaterial({ color: 0x9ff6ee, transparent: true, opacity: 0.95 })
+      new THREE.LineBasicMaterial({ color: 0x9ff6ee, transparent: true, opacity: 1 })
     ));
-    for (var i = 1; i <= 3; i++) {  // horizontal shutter slats
-      var bar = new THREE.Mesh(
-        new THREE.BoxGeometry(0.9, 0.045, 0.9),
-        new THREE.MeshBasicMaterial({ color: 0x6ff0e4, transparent: true, opacity: 0.5 })
-      );
-      bar.position.y = -0.52 + i * 0.26;
+    var barMat = new THREE.MeshBasicMaterial({ color: 0x8ff7ec });
+    var h = 0.38;
+    var ring = [[-h, -h], [0, -h], [h, -h], [h, 0], [h, h], [0, h], [-h, h], [-h, 0]];
+    ring.forEach(function (p) {
+      var bar = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1.02, 8), barMat);
+      bar.position.set(p[0], 0, p[1]);
       mesh.add(bar);
-    }
+    });
     mesh.position.set(w.x, animate ? 2.6 : B.REST_Y, w.z);
     if (animate) mesh.userData.slam = 0;
     P.scene.scene.add(mesh);

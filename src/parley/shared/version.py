@@ -5,4 +5,4 @@ runtime config carries a mirrored ``version`` field. ``check_version_sync.py``
 and a unit test assert the two never drift apart.
 """
 
-__version__ = "1.25"
+__version__ = "1.26"
