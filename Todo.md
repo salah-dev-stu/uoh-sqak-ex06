@@ -27,9 +27,9 @@
 - [x] T019 `config/report.json` — sender, recipient, gmail{creds_env,token_env,scopes}, smtp{host,port,user_env,pass_env,from} (R4/H7)
 - [x] T020 `config/gatekeeper.json` — per-service rate limits, budgets, ledger path (R3/R4)
 - [x] T021 Add team metadata block (names, IDs, group, repo) to `config/report.json`
-- [ ] T022 `pre-commit` config (ruff + line guard) — optional dev nicety
+- [x] T022 `pre-commit` config (ruff + line guard) — optional dev nicety
 - [x] T023 `tests/conftest.py` — shared fixtures (tmp config, fake clock, seeds)
-- [ ] T024 `tests/fixtures/config/*.json` — minimal valid configs for tests
+- [x] T024 `tests/fixtures/config/*.json` — minimal valid configs for tests
 - [x] T025 Commit M0 config layer
 
 ## M1 — shared core

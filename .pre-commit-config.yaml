@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff
+        entry: uv run ruff check
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: file-lines
+        name: file-size guard (≤150 raw+logical)
+        entry: uv run python scripts/check_file_lines.py
+        language: system
+        pass_filenames: false
+      - id: version-sync
+        name: version single-source
+        entry: uv run python scripts/check_version_sync.py
+        language: system
+        pass_filenames: false
