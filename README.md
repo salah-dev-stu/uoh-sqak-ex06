@@ -33,6 +33,12 @@ move  3 | thief MOVE NW | "I hear you closing, so I double along the top edge wh
 *An excerpt from the committed [sample run](reports/transcripts/sample/transcript.md) — free
 natural language drives every move; the board is the orchestrator's authoritative state.*
 
+![the chase, sub-game 1](docs/figures/chase_filmstrip.png)
+
+*Sub-game 1 rendered from the actual run log: the Cop (blue) closes a diagonal net on the
+Thief (red), who is inferring the Cop's position from words alone — until the gold-ringed
+capture at move 4. Each caption is the agent's real free-NL taunt that turn.*
+
 ---
 
 ## 1. Formal problem model — a Dec-POMDP
@@ -73,6 +79,8 @@ flowchart TD
     NGROK["ngrok / Cloudflare — public HTTPS (H8)"] -. exposes .-> COP & THIEF
 ```
 
+![architecture](docs/figures/architecture.png)
+
 The **MCP client holds the LLM and the authoritative game state**; the **two FastMCP
 servers are stateless tool/resource providers** (`observe`, `send_message`,
 `read_messages`, `act`, + a `game://rules` resource) with **no LLM and no game rules
@@ -96,6 +104,14 @@ sequenceDiagram
     ORCH->>ORCH: apply to GameState · log · check terminal
     Note over ORCH: cop plays symmetrically · ≤25 moves × 6 sub-games → emailed report (H4/H7)
 ```
+
+![MCP turn sequence](docs/figures/sequence.png)
+
+<details><summary><b>Class diagram (R2)</b> — click to expand</summary>
+
+![class diagram](docs/figures/class_diagram.png)
+
+</details>
 
 ## 4. The game (all config-driven — `config/game.json`)
 
@@ -126,6 +142,11 @@ exchange from the sample run:
 
 Position is communicated as walls, corners, and compass directions — exactly the
 ambiguity a distributed multi-agent system must tolerate.
+
+<p align="center"><img src="docs/figures/board_hero.png" width="380" alt="capture moment"></p>
+
+*The capture: the Cop finally shares the Thief's cell (gold ring) — reached purely through
+natural-language inference, no coordinates ever exchanged.*
 
 ## 6. Autonomy & reporting (H4/H7)
 
@@ -182,7 +203,7 @@ prd.md · Plan.md · Todo.md (520 tasks)
 
 SDK layer (R1) · OOP + class diagram (R2) · **wired Gatekeeper on every external
 call, meta-test enforced** (R3) · config-driven, zero hardcoding (R4/R10) · version
-single-source 1.00 (R5) · TDD, 98% cov, fully mocked (R6/R9) · **≤150 lines/file raw
+single-source 1.20 (R5) · TDD, 98% cov, fully mocked (R6/R9) · **≤150 lines/file raw
 AND logical** (R7) · ruff clean (R8) · no secrets, `.env-example` (R11) · uv only
 (R12) · continuous commits + green Python-3.13 CI (R13).
 

@@ -11,10 +11,10 @@ sequenceDiagram
     ORCH->>TS: push_observation(prose) + deliver_message(cop's last NL)
     ORCH->>GK: note("mcp", ...) [recorded]
     ORCH->>LLM: build_prompt(role, obs, opponent msg, history)
-    LLM-->>ORCH: free-NL message + "MOVE: <dir>" (H2)
+    LLM-->>ORCH: free-NL message + MOVE token (H2)
     ORCH->>TS: send_message(NL) + act(token)
     TS-->>ORCH: collect() = {message, action}
-    ORCH->>ORCH: apply action to authoritative GameState; log MoveRecord
+    ORCH->>ORCH: apply action to authoritative GameState and log MoveRecord
     ORCH->>ORCH: check terminal (capture / survive / trap)
     Note over ORCH,CS: Cop then plays symmetrically against the Thief's NL message
     ORCH->>CS: push_observation + deliver_message(thief's NL)

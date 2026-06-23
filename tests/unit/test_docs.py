@@ -38,5 +38,13 @@ def test_six_mechanism_prds_present_and_indexed():
 
 
 def test_root_docs_present():
-    for name in ("prd.md", "Plan.md", "Todo.md"):
+    for name in ("prd.md", "Plan.md", "Todo.md", "CHANGELOG.md"):
         assert (ROOT / name).exists()
+
+
+def test_readme_figures_exist():
+    """Every image the README embeds must be committed (no 404s)."""
+    figures = ROOT / "docs" / "figures"
+    for name in ("chase_filmstrip.png", "board_hero.png", "architecture.png",
+                 "sequence.png", "class_diagram.png"):
+        assert (figures / name).exists(), f"missing README figure: {name}"
