@@ -1,0 +1,577 @@
+{
+  "meta": {
+    "title": "Parley: Rooftop Pursuit",
+    "source": "committed sample run (deterministic; regenerate via make_sample_run)",
+    "grid_size": [
+      5,
+      5
+    ],
+    "vision_radius": 1,
+    "num_subgames": 6,
+    "scoring": {
+      "cop_win": 20,
+      "thief_win": 10,
+      "cop_loss": 5,
+      "thief_loss": 5
+    },
+    "totals": {
+      "cop": 120,
+      "thief": 30
+    },
+    "generated_from": "reports/sample_report.json"
+  },
+  "subgames": [
+    {
+      "index": 0,
+      "winner": "cop",
+      "start": {
+        "thief": [
+          4,
+          4
+        ],
+        "cop": [
+          0,
+          0
+        ]
+      },
+      "scores": {
+        "cop": 20,
+        "thief": 5
+      },
+      "frames": [
+        {
+          "move": 1,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
+          "cop": [
+            0,
+            0
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 2,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "I hear your footsteps echoing off the eastern stairwell — I'm cutting the angle.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 3,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 4,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": true,
+          "vision_radius": 1
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "winner": "cop",
+      "start": {
+        "thief": [
+          4,
+          4
+        ],
+        "cop": [
+          0,
+          0
+        ]
+      },
+      "scores": {
+        "cop": 20,
+        "thief": 5
+      },
+      "frames": [
+        {
+          "move": 1,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "cop": [
+            0,
+            0
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 2,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "Nowhere left along that wall. I'm one stride behind you and gaining.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 3,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 4,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "Every diagonal you take, I take too. The net draws tight now.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": true,
+          "vision_radius": 1
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "winner": "cop",
+      "start": {
+        "thief": [
+          4,
+          4
+        ],
+        "cop": [
+          0,
+          0
+        ]
+      },
+      "scores": {
+        "cop": 20,
+        "thief": 5
+      },
+      "frames": [
+        {
+          "move": 1,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
+          "cop": [
+            0,
+            0
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 2,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "I hear your footsteps echoing off the eastern stairwell — I'm cutting the angle.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 3,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 4,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": true,
+          "vision_radius": 1
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "winner": "cop",
+      "start": {
+        "thief": [
+          4,
+          4
+        ],
+        "cop": [
+          0,
+          0
+        ]
+      },
+      "scores": {
+        "cop": 20,
+        "thief": 5
+      },
+      "frames": [
+        {
+          "move": 1,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "cop": [
+            0,
+            0
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 2,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "Nowhere left along that wall. I'm one stride behind you and gaining.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 3,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 4,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "Every diagonal you take, I take too. The net draws tight now.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": true,
+          "vision_radius": 1
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "winner": "cop",
+      "start": {
+        "thief": [
+          4,
+          4
+        ],
+        "cop": [
+          0,
+          0
+        ]
+      },
+      "scores": {
+        "cop": 20,
+        "thief": 5
+      },
+      "frames": [
+        {
+          "move": 1,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
+          "cop": [
+            0,
+            0
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 2,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "I hear your footsteps echoing off the eastern stairwell — I'm cutting the angle.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 3,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 4,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": true,
+          "vision_radius": 1
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "winner": "cop",
+      "start": {
+        "thief": [
+          4,
+          4
+        ],
+        "cop": [
+          0,
+          0
+        ]
+      },
+      "scores": {
+        "cop": 20,
+        "thief": 5
+      },
+      "frames": [
+        {
+          "move": 1,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "cop": [
+            0,
+            0
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 2,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "Nowhere left along that wall. I'm one stride behind you and gaining.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 3,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 4,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "Every diagonal you take, I take too. The net draws tight now.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            2,
+            2
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": true,
+          "vision_radius": 1
+        }
+      ]
+    }
+  ]
+}
