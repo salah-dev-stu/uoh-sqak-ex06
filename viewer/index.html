@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parley: Rooftop Pursuit — 3D Replay Theater</title>
+  <link rel="stylesheet" href="css/theater.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Parley<span>: Rooftop Pursuit</span></h1>
+      <p class="src">replay theater (not a game) · source: <span id="source">…</span></p>
+    </header>
+
+    <main>
+      <div id="stage">
+        <div id="bubbles"></div>
+        <div id="banner"></div>
+      </div>
+      <aside id="panel">
+        <h2>Dialogue <small>free natural language (H2)</small></h2>
+        <div id="chat" role="log" aria-live="polite" aria-label="agent dialogue"></div>
+        <div class="legend">
+          <span class="dot cop"></span> Cop &nbsp;&nbsp; <span class="dot thief"></span> Thief
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div id="hud"></div>
+      <div id="controls">
+        <div id="subgames" class="sg-row" aria-label="sub-game selector"></div>
+        <span class="spacer"></span>
+        <button id="step-back" aria-label="step back" title="step back (←)">⏮</button>
+        <button id="play" aria-label="play or pause" title="play / pause (space)">▶</button>
+        <button id="step-fwd" aria-label="step forward" title="step forward (→)">⏭</button>
+        <select id="speed" aria-label="playback speed" title="speed">
+          <option value="0.5">0.5×</option>
+          <option value="1" selected>1×</option>
+          <option value="2">2×</option>
+        </select>
+        <input id="scrub" type="range" min="0" max="0" value="0" aria-label="timeline scrubber" />
+      </div>
+    </footer>
+
+    <div id="error">
+      Could not load replay data. Launch with <code>make viewer</code>
+      (or <code>python scripts/serve_viewer.py</code>), or make sure
+      <code>replay-data.js</code> sits next to this page.
+    </div>
+  </div>
+
+  <!-- Vendored, offline: classic global scripts (no ES modules → works from file://) -->
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/OrbitControls.js"></script>
+  <script src="replay-data.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/agents.js"></script>
+  <script src="js/dialogue.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

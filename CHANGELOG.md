@@ -4,6 +4,14 @@ Versioning per R5: start at 1.00, **+0.01 per change**, single source of truth i
 `src/parley/shared/version.py` (mirrored in `config/runtime.json`, asserted by
 `scripts/check_version_sync.py`).
 
+## 1.21–1.23 — 2026-06-23 · Standout: 3D Replay Theater (MUST tier)
+- **1.21** viewer PRD + Plan + Todo (303 tasks) under `docs/viewer/`
+- **1.22** `parley.viewer` replay exporter + tests; generated real replay data
+- **1.23** 3D viewer (vendored Three.js, board/agents/dialogue/controls), `serve_viewer`
+  + `make viewer`, screenshots + GIF, prominent README section. Capture polish:
+  agents stand side-by-side (no clipping), only the active speaker's bubble shows.
+  CI unchanged (Python-only); 142 tests green, 98% coverage.
+
 ## 1.20 — 2026-06-23
 Full vibe-coding lifecycle for EX06 `parley`, milestone by milestone:
 

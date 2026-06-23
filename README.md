@@ -41,6 +41,31 @@ capture at move 4. Each caption is the agent's real free-NL taunt that turn.*
 
 ---
 
+## ✨ Standout — "Parley: Rooftop Pursuit", a 3D replay theater
+
+A cinematic, neon-noir **3D replay** of a **real committed agent game** — the free
+natural-language taunts (the graded heart) rise as **speech bubbles** and stream into a
+noir **chat panel**, while the Cop (blue) and Thief (amber) glide across a glowing
+rooftop to the capture. **It is a replay theater, not a playable game.**
+
+![3D replay](assets/viewer/parley-replay.gif)
+
+| Mid-chase — NL taunts as bubbles + synced chat | Capture — cop corners the thief |
+|---|---|
+| ![chase](assets/viewer/chase.png) | ![capture](assets/viewer/capture.png) |
+
+**Open it — zero setup, two ways:**
+```bash
+make viewer            # or:  python scripts/serve_viewer.py   (serves + opens the browser)
+# …or simply double-click  viewer/index.html  (works offline from file://)
+```
+Three.js is **vendored** (classic global build) and the replay is **inlined**
+(`window.REPLAY`, no `fetch`, no CDN) so it runs with **no install and no network**. The
+data is exported from the committed sample run by `scripts/export_replay.py` and labeled
+on screen — real moves, real dialogue. *(Design: [`docs/viewer/`](docs/viewer/).)*
+
+---
+
 ## 1. Formal problem model — a Dec-POMDP
 
 We model the chase as a **Decentralized Partially Observable Markov Decision
