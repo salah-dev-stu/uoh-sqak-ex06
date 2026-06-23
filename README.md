@@ -74,6 +74,15 @@ rival's position **from words alone** — the exact challenge the assignment gra
 |---|---|
 | ![barrier](assets/viewer/barrier.png) | ![capture](assets/viewer/capture-fx.png) |
 
+### The orchestration, made visible — MCP message-flow inset
+
+A live overlay shows the architecture in motion: the **Orchestrator (MCP client, holds
+the LLM)** talking to the **two FastMCP servers**, with a message dot tracing each
+turn — observation/prompt out, free-NL message + action back. It surfaces the graded
+separation (**LLM in the client, two stateless servers** — H1/H3) as you watch.
+
+<p align="center"><img src="assets/viewer/mcp-flow.png" width="360" alt="MCP message-flow inset"></p>
+
 **Open it — zero setup, two ways:**
 ```bash
 make viewer            # or:  python scripts/serve_viewer.py   (serves + opens the browser)
