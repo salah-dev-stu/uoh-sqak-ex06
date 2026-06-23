@@ -38,13 +38,15 @@
       <div id="controls">
         <div id="subgames" class="sg-row" aria-label="sub-game selector"></div>
         <span class="spacer"></span>
+        <button id="restart" aria-label="restart whole game" title="restart from sub-game 1">⟲</button>
         <button id="step-back" aria-label="step back" title="step back (←)">⏮</button>
-        <button id="play" aria-label="play or pause" title="play / pause (space)">▶</button>
+        <button id="play" aria-label="play or pause" title="play / pause whole game (space)">▶</button>
         <button id="step-fwd" aria-label="step forward" title="step forward (→)">⏭</button>
-        <select id="speed" aria-label="playback speed" title="speed">
-          <option value="0.5">0.5×</option>
-          <option value="1" selected>1×</option>
-          <option value="2">2×</option>
+        <select id="speed" aria-label="playback speed" title="speed (lower = slower)">
+          <option value="0.25">0.25× (slowest)</option>
+          <option value="0.5" selected>0.5×</option>
+          <option value="1">1×</option>
+          <option value="2">2× (fast)</option>
         </select>
         <input id="scrub" type="range" min="0" max="0" value="0" aria-label="timeline scrubber" />
       </div>

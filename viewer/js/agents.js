@@ -63,7 +63,7 @@
     ['cop', 'thief'].forEach(function (role) {
       var s = A.anim[role];
       if (s.t >= 1) return;
-      s.t = Math.min(1, s.t + dt / 0.55);
+      s.t = Math.min(1, s.t + dt / 0.7);
       var e = P.util.easeInOut(s.t);
       var x = P.util.lerp(s.from.x, s.to.x, e);
       var z = P.util.lerp(s.from.z, s.to.z, e);

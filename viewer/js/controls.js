@@ -8,8 +8,8 @@
     C.app = app;
     C.el = {
       play: byId('play'), back: byId('step-back'), fwd: byId('step-fwd'),
-      speed: byId('speed'), scrub: byId('scrub'), sg: byId('subgames'),
-      hud: byId('hud'), banner: byId('banner'),
+      restart: byId('restart'), speed: byId('speed'), scrub: byId('scrub'),
+      sg: byId('subgames'), hud: byId('hud'), banner: byId('banner'),
     };
     C._buildSubgames();
     C._bind();
@@ -31,6 +31,7 @@
     C.el.play.onclick = function () { C.app.togglePlay(); };
     C.el.fwd.onclick = function () { C.app.step(1); };
     C.el.back.onclick = function () { C.app.step(-1); };
+    C.el.restart.onclick = function () { C.app.restart(); };
     C.el.speed.onchange = function () { C.app.setSpeed(parseFloat(C.el.speed.value)); };
     C.el.scrub.oninput = function () { C.app.scrubTo(parseInt(C.el.scrub.value, 10)); };
     document.addEventListener('keydown', function (e) {

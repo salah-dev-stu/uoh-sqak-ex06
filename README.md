@@ -71,6 +71,12 @@ rival's position **from words alone** — the exact challenge the assignment gra
 make viewer            # or:  python scripts/serve_viewer.py   (serves + opens the browser)
 # …or simply double-click  viewer/index.html  (works offline from file://)
 ```
+
+**Watch the whole game:** it opens paused at the start — press **▶** (or Space) and it
+plays **all 6 sub-games end-to-end**, pausing briefly between each. Use the **speed**
+dropdown (0.25× … 2×, default 0.5×), the **timeline scrubber**, **⟲ restart**, the
+**⏮ ⏭** step buttons, or the **sub-game buttons 1–6** to jump around. Toggle
+**Director / Cop's view / Thief's view** for the fog-of-war.
 Three.js is **vendored** (classic global build) and the replay is **inlined**
 (`window.REPLAY`, no `fetch`, no CDN) so it runs with **no install and no network**. The
 data is exported from the committed sample run by `scripts/export_replay.py` and labeled

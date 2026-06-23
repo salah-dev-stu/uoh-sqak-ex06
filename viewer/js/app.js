@@ -1,6 +1,6 @@
 // parley viewer — main: read window.REPLAY, drive frames, wire the modules.
 (function (P) {
-  var App = { playing: false, speed: 1, sgIndex: 0, frameIdx: 0, _acc: 0 };
+  var App = { playing: false, speed: 0.5, sgIndex: 0, frameIdx: 0, _acc: 0 };
   function gid(id) { return document.getElementById(id); }
 
   App.start = function () {
@@ -21,13 +21,21 @@
     );
     P.controls.init(App.replay, App);
     App.selectSubgame(0);
+    App.playing = false;   // start paused at the very beginning — press Play to watch all 6
     App._clock = performance.now();
     requestAnimationFrame(App._loop);
   };
 
   App.subgame = function () { return App.replay.subgames[App.sgIndex]; };
 
+  App.restart = function () {
+    App._chain = undefined;
+    App.selectSubgame(0);
+    App.playing = true;
+  };
+
   App.selectSubgame = function (i) {
+    App._chain = undefined;
     App.sgIndex = i;
     App.frameIdx = 0;
     var sg = App.subgame();
@@ -60,6 +68,7 @@
 
   App.step = function (d) {
     App.playing = false;
+    App._chain = undefined;
     var n = App.subgame().frames.length;
     var ni = P.util.clamp(App.frameIdx + d, 0, n - 1);
     if (ni === App.frameIdx) return;
@@ -69,16 +78,30 @@
 
   App.scrubTo = function (idx) {
     App.playing = false;
+    App._chain = undefined;
     App.frameIdx = idx;
     App._apply(idx, false, false);
   };
 
-  App.togglePlay = function () { App.playing = !App.playing; };
+  // From the last frame of the last sub-game, play restarts the whole game.
+  App.togglePlay = function () {
+    var last = App.sgIndex === App.replay.subgames.length - 1 &&
+      App.frameIdx >= App.subgame().frames.length - 1;
+    if (!App.playing && last) { App.restart(); return; }
+    App.playing = !App.playing;
+  };
+
   App.setSpeed = function (s) { App.speed = s; };
 
+  // At a sub-game's end, pause briefly then auto-advance to the next one — so a
+  // single Play runs the whole game (all 6 sub-games) start to end.
   App._advance = function () {
     var sg = App.subgame();
-    if (App.frameIdx >= sg.frames.length - 1) { App.playing = false; return; }
+    if (App.frameIdx >= sg.frames.length - 1) {
+      if (App.sgIndex < App.replay.subgames.length - 1) App._chain = 0;
+      else App.playing = false;
+      return;
+    }
     App.frameIdx += 1;
     App._apply(App.frameIdx, true, true);
   };
@@ -90,8 +113,14 @@
     P.barriers.update(dt);
     P.fx.update(dt);
     if (App.playing) {
-      App._acc += dt * App.speed;
-      if (App._acc >= 0.85) { App._acc = 0; App._advance(); }
+      if (App._chain !== undefined) {
+        App._chain += dt;
+        if (App._chain > 2.0) { App._chain = undefined; App.selectSubgame(App.sgIndex + 1); }
+      } else {
+        App._acc += dt * App.speed;
+        // ~1.7s per move at 1x — time to read the taunt and watch the glide.
+        if (App._acc >= 1.7) { App._acc = 0; App._advance(); }
+      }
     }
     P.dialogue.updateBubbles(P.scene.camera, P.scene.renderer.domElement);
     P.scene.render();
