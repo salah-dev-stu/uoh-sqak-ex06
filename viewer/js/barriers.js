@@ -16,9 +16,17 @@
   };
 
   B.setFrame = function (frame, animate) {
+    // The cop places a barrier on its OWN cell, so on the placement turn the cop
+    // stands on it. Don't draw the cage while an agent occupies that cell — the
+    // wall "materialises" once the cop steps off, reading as: drop wall, slip out.
+    var occupied = {};
+    occupied[frame.cop[0] + ',' + frame.cop[1]] = true;
+    occupied[frame.thief[0] + ',' + frame.thief[1]] = true;
+
     var present = {};
     frame.barriers.forEach(function (cell) {
       var key = cell[0] + ',' + cell[1];
+      if (occupied[key]) return;
       present[key] = true;
       if (!B.meshes[key]) B._add(cell, animate);
     });
