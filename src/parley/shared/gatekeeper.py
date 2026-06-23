@@ -18,14 +18,14 @@ from parley.shared.gatekeeper_types import GateEvent, GateLimitError, RunResult
 from parley.shared.rate_limiter import RateLimiter
 
 
-def _real_subprocess(argv: list[str], timeout: int) -> RunResult:
+def _real_subprocess(argv: list[str], timeout: int) -> RunResult:  # pragma: no cover
     import subprocess  # noqa: PLC0415 — intentionally confined to the Gatekeeper
 
     p = subprocess.run(argv, capture_output=True, text=True, timeout=timeout, check=False)
     return RunResult(returncode=p.returncode, stdout=p.stdout, stderr=p.stderr)
 
 
-def _real_http(method: str, url: str, headers: dict, body: Any, timeout: int) -> dict:
+def _real_http(method: str, url: str, headers: dict, body: Any, timeout: int) -> dict:  # pragma: no cover
     import httpx  # noqa: PLC0415
 
     resp = httpx.request(method, url, headers=headers, json=body, timeout=timeout)
@@ -33,7 +33,7 @@ def _real_http(method: str, url: str, headers: dict, body: Any, timeout: int) ->
     return resp.json()
 
 
-def _real_smtp(host: str, port: int, user: str, password: str, message: str) -> None:
+def _real_smtp(host: str, port: int, user: str, password: str, message: str) -> None:  # pragma: no cover
     import smtplib  # noqa: PLC0415
 
     with smtplib.SMTP(host, port) as s:
@@ -42,7 +42,7 @@ def _real_smtp(host: str, port: int, user: str, password: str, message: str) -> 
         s.sendmail(user, [user], message)
 
 
-def _real_google(token_path: str, raw: str) -> dict:
+def _real_google(token_path: str, raw: str) -> dict:  # pragma: no cover
     from google.oauth2.credentials import Credentials  # noqa: PLC0415
     from googleapiclient.discovery import build  # noqa: PLC0415
 
