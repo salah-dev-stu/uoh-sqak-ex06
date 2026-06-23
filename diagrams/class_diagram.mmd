@@ -1,0 +1,85 @@
+classDiagram
+    class ParleySDK {
+      +cfg: Config
+      +gate: ApiGatekeeper
+      +provider: LLMProvider
+      +sender: ReportSender
+      +play() GameResult
+      +deploy_info() dict
+      +report_only(report) Any
+    }
+    class ApiGatekeeper {
+      +run_subprocess() RunResult
+      +http_request() dict
+      +smtp_send()
+      +google_send() dict
+      +note(service, action)
+      +flush() Path
+    }
+    class Pipeline {
+      +run() GameResult
+    }
+    class GameRunner {
+      +run() GameResult
+    }
+    class SubGameRunner {
+      +run(index, state, drivers) SubGameResult
+    }
+    class TurnEngine {
+      +half_turn(state, driver) tuple
+    }
+    class AgentDriver {
+      +role: Role
+      +take_turn(state) TurnDecision
+    }
+    class McpClient {
+      +observe() str
+      +send_message(text)
+      +read_messages() list
+      +act(token)
+    }
+    class GameState {
+      +grid: Grid
+      +cop: Piece
+      +thief: Piece
+      +turn: Role
+    }
+    class LLMProvider {
+      <<interface>>
+      +complete(prompt) str
+    }
+    class ClaudeCliProvider
+    class OllamaProvider
+    class ReportSender {
+      <<interface>>
+      +send(report)
+    }
+    class GmailApiSender
+    class SmtpSender
+    class Renderer {
+      <<interface>>
+      +render(state, record)
+    }
+    class AsciiRenderer
+    class TkRenderer
+
+    ParleySDK *-- ApiGatekeeper
+    ParleySDK *-- Pipeline
+    ParleySDK ..> LLMProvider
+    ParleySDK ..> ReportSender
+    Pipeline *-- GameRunner
+    GameRunner *-- SubGameRunner
+    SubGameRunner *-- TurnEngine
+    TurnEngine ..> AgentDriver
+    AgentDriver ..> LLMProvider
+    AgentDriver ..> McpClient
+    AgentDriver ..> GameState
+    McpClient ..> ApiGatekeeper : records via note()
+    LLMProvider <|.. ClaudeCliProvider
+    LLMProvider <|.. OllamaProvider
+    ReportSender <|.. GmailApiSender
+    ReportSender <|.. SmtpSender
+    Renderer <|.. AsciiRenderer
+    Renderer <|.. TkRenderer
+    ClaudeCliProvider ..> ApiGatekeeper
+    GmailApiSender ..> ApiGatekeeper

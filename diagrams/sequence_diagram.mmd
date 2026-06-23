@@ -1,0 +1,25 @@
+sequenceDiagram
+    autonumber
+    participant ORCH as Orchestrator (MCP Client + LLM)
+    participant GK as ApiGatekeeper
+    participant TS as Thief FastMCP server
+    participant CS as Cop FastMCP server
+    participant LLM as LLM (Claude CLI / Ollama)
+
+    Note over ORCH: One full turn — thief moves first (H6)
+    ORCH->>ORCH: compute Thief partial observation (Dec-POMDP, H6)
+    ORCH->>TS: push_observation(prose) + deliver_message(cop's last NL)
+    ORCH->>GK: note("mcp", ...) [recorded]
+    ORCH->>LLM: build_prompt(role, obs, opponent msg, history)
+    LLM-->>ORCH: free-NL message + "MOVE: <dir>" (H2)
+    ORCH->>TS: send_message(NL) + act(token)
+    TS-->>ORCH: collect() = {message, action}
+    ORCH->>ORCH: apply action to authoritative GameState; log MoveRecord
+    ORCH->>ORCH: check terminal (capture / survive / trap)
+    Note over ORCH,CS: Cop then plays symmetrically against the Thief's NL message
+    ORCH->>CS: push_observation + deliver_message(thief's NL)
+    ORCH->>LLM: prompt(cop)
+    LLM-->>ORCH: NL message + MOVE/BARRIER
+    ORCH->>CS: send_message + act
+    ORCH->>ORCH: apply + terminal check
+    Note over ORCH: repeat ≤25 moves × 6 sub-games → build report → email via Gatekeeper (H4/H7)

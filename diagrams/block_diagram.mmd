@@ -1,0 +1,19 @@
+flowchart TD
+    CLI["parley CLI"] --> SDK["ParleySDK — single public entry (R1)"]
+    CFG[("config/*.json<br/>game · llm · mcp · report · gatekeeper · runtime")] -. reads .-> SDK
+    SDK --> ORCH["Orchestrator = MCP CLIENT<br/>turn loop · 6 sub-games · holds the LLM (H3)"]
+    ORCH --> LLM{{"LLMProvider<br/>Claude CLI (subscription) | Ollama"}}
+    ORCH --> GK{{"ApiGatekeeper<br/>gate + ledger (R3)"}}
+    ORCH -- "MCP tools over HTTP" --> COP["Cop FastMCP server<br/>:8011 · bearer auth (H1/H8)"]
+    ORCH -- "MCP tools over HTTP" --> THIEF["Thief FastMCP server<br/>:8012 · bearer auth (H1/H8)"]
+    COP -. "tools: observe/send_message/<br/>read_messages/act + game://rules" .-> COP
+    THIEF -. "no LLM inside (H3)" .-> THIEF
+    GK -->|subprocess| LLM
+    GK -->|http| OLL["Ollama :11434"]
+    GK -->|google / smtp| MAIL["Gmail API / SMTP"]
+    ORCH --> REP["Report builder → JSON"]
+    REP --> SENDER{{"ReportSender<br/>Gmail API | SMTP (H7)"}}
+    SENDER --> GK
+    REP --> ART[("reports/<br/>report.json · transcript.md<br/>moves.jsonl · gate_ledger.json")]
+    NGROK["ngrok / Cloudflare tunnel<br/>public HTTPS (H8)"] -. exposes .-> COP
+    NGROK -. exposes .-> THIEF
