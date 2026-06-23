@@ -83,6 +83,15 @@ class ApiGatekeeper:
         if not allowed:
             raise GateLimitError(f"{service} limit exceeded for '{action}'")
 
+    def note(self, service: str, action: str, meta: dict | None = None) -> None:
+        """Gate + record a call whose transport a sanctioned library performs.
+
+        MCP tool calls travel over the wire inside the FastMCP client; this keeps
+        them on the audited ledger and under the rate budget without us
+        re-implementing the transport (R3).
+        """
+        self._gate(service, action, meta or {})
+
     def run_subprocess(self, argv: list[str], timeout: int) -> RunResult:
         self._gate("subprocess", argv[0] if argv else "", {"argv": argv})
         backend = self._backends.get("subprocess", _real_subprocess)
