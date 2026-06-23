@@ -1,0 +1,17 @@
+{
+  "provider": "claude_cli",
+  "temperature": 0.8,
+  "max_tokens": 400,
+  "history_window": 6,
+  "claude_cli": {
+    "bin_env": "PARLEY_CLAUDE_CLI_BIN",
+    "model": "claude-haiku-4-5",
+    "extra_args": ["--output-format", "json"],
+    "timeout_s": 60
+  },
+  "ollama": {
+    "base_url_env": "PARLEY_OLLAMA_BASE_URL",
+    "model": "llama3.2",
+    "timeout_s": 120
+  }
+}

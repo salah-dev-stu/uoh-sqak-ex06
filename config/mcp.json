@@ -1,0 +1,19 @@
+{
+  "transport": "http",
+  "cop": {
+    "host": "127.0.0.1",
+    "port": 8011,
+    "path": "/mcp",
+    "token_env": "PARLEY_COP_TOKEN"
+  },
+  "thief": {
+    "host": "127.0.0.1",
+    "port": 8012,
+    "path": "/mcp",
+    "token_env": "PARLEY_THIEF_TOKEN"
+  },
+  "auth": {
+    "scheme": "bearer"
+  },
+  "request_timeout_s": 30
+}

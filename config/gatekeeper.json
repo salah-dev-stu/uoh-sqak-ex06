@@ -1,0 +1,9 @@
+{
+  "ledger_path": "reports/runs/gate_ledger.json",
+  "limits": {
+    "subprocess": {"rate_per_min": 120, "budget": 5000},
+    "http": {"rate_per_min": 240, "budget": 10000},
+    "smtp": {"rate_per_min": 10, "budget": 50},
+    "google": {"rate_per_min": 10, "budget": 50}
+  }
+}

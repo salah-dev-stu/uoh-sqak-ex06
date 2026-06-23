@@ -1,0 +1,26 @@
+{
+  "sender": "gmail",
+  "recipient": "rmisegal+uoh26b@gmail.com",
+  "subject": "EX06 parley — autonomous cops & robbers game report (uoh-sqak)",
+  "team": {
+    "group_code": "uoh-sqak",
+    "members": [
+      {"name": "Salah Qadah", "id": "323039974"},
+      {"name": "Andalus Kalash", "id": "211435797"}
+    ],
+    "repo": "https://github.com/salah-dev-stu/uoh-sqak-ex06",
+    "self_grade": 85
+  },
+  "gmail": {
+    "credentials_env": "PARLEY_GMAIL_CREDENTIALS",
+    "token_env": "PARLEY_GMAIL_TOKEN",
+    "scopes": ["https://www.googleapis.com/auth/gmail.send"]
+  },
+  "smtp": {
+    "host_env": "PARLEY_SMTP_HOST",
+    "port_env": "PARLEY_SMTP_PORT",
+    "user_env": "PARLEY_SMTP_USER",
+    "password_env": "PARLEY_SMTP_PASSWORD",
+    "from_env": "PARLEY_REPORT_FROM"
+  }
+}
