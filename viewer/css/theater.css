@@ -38,10 +38,12 @@ main { display: grid; grid-template-columns: 1fr 360px; min-height: 0; }
 /* speech bubbles float over the canvas */
 #bubbles { position: absolute; inset: 0; pointer-events: none; }
 .bubble { position: absolute; transform: translate(-50%, -100%);
-  max-width: 240px; padding: 8px 11px; border-radius: 12px; font-size: 12.5px; line-height: 1.35;
-  background: rgba(10, 16, 28, .92); border: 1px solid; transition: opacity .25s; }
+  max-width: 320px; padding: 9px 12px; border-radius: 12px; font-size: 12.5px; line-height: 1.4;
+  background: rgba(10, 16, 28, .95); border: 1px solid; transition: opacity .25s; }
 .bubble.cop { border-color: var(--cop); box-shadow: 0 0 16px rgba(57,160,255,.5); }
 .bubble.thief { border-color: var(--thief); box-shadow: 0 0 16px rgba(255,157,58,.5); }
+.bubble strong, .chat-line strong { font-weight: 800; color: #fff; }
+.bubble em, .chat-line em { color: #b9c6dd; }
 
 #banner { position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
   font-weight: 800; letter-spacing: 4px; font-size: 26px; color: #fff; opacity: 0;

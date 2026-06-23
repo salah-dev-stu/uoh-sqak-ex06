@@ -43,11 +43,19 @@ capture at move 4. Each caption is the agent's real free-NL taunt that turn.*
 
 ## ✨ Standout — "Parley: Rooftop Pursuit", a 3D replay theater
 
-A cinematic, neon-noir **3D replay** of a **real committed agent game** — the free
+A cinematic, neon-noir **3D replay** of a **real agent game** — the free
 natural-language taunts (the graded heart) rise as **speech bubbles** and stream into a
 noir **chat panel**, while the Cop (blue) and Thief (amber) glide across a glowing
 rooftop, drop neon barriers, and meet in a particle-burst capture. **It is a replay
 theater, not a playable game.**
+
+The committed replay is a **live Claude-CLI match** (you can see the agents reasoning
+about each other's words — *"every word you speak narrows down where you must be"*).
+Regenerate a fresh, different game any time:
+```bash
+make replay-live   # a real Claude-CLI game — dynamic, longer, differs every run
+make replay        # …or restore the fast, deterministic sample game
+```
 
 ![3D replay](assets/viewer/parley-replay.gif)
 
@@ -79,8 +87,8 @@ dropdown (0.25× … 2×, default 0.5×), the **timeline scrubber**, **⟲ resta
 **Director / Cop's view / Thief's view** for the fog-of-war.
 Three.js is **vendored** (classic global build) and the replay is **inlined**
 (`window.REPLAY`, no `fetch`, no CDN) so it runs with **no install and no network**. The
-data is exported from the committed sample run by `scripts/export_replay.py` and labeled
-on screen — real moves, real dialogue. *(Design: [`docs/viewer/`](docs/viewer/).)*
+data source is labeled on screen — always **real moves, real dialogue** (never
+fabricated). *(Design: [`docs/viewer/`](docs/viewer/).)*
 
 ---
 

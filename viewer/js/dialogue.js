@@ -2,6 +2,16 @@
 (function (P) {
   var D = {};
 
+  // Render the LLM's light markdown (**bold**, *italic*, line breaks) as real
+  // formatting — HTML-escaped first so the text can never inject markup.
+  function mdToHtml(text) {
+    var s = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    s = s.replace(/\n+/g, '<br>');
+    return s;
+  }
+
   D.init = function (bubbleLayer, chatEl, sourceEl) {
     D.bubbleLayer = bubbleLayer;
     D.chatEl = chatEl;
@@ -28,16 +38,17 @@
     var line = document.createElement('div');
     line.className = 'chat-line ' + frame.role;
     var msg = frame.message || '(moves in silence)';
+    var html = mdToHtml(msg);
     line.innerHTML = '<span class="who">' + frame.role + '</span>' +
-      '<span class="mv">m' + frame.move + '</span><span class="msg"></span>';
-    line.querySelector('.msg').textContent = msg;
+      '<span class="mv">m' + frame.move + '</span><span class="msg">' + html + '</span>';
     D.chatEl.appendChild(line);
     D.chatEl.scrollTop = D.chatEl.scrollHeight;
 
-    // Only the active speaker's bubble is shown, so two bubbles never overlap.
+    // Only the active speaker's bubble shows, so two bubbles never overlap. It
+    // carries the full taunt (formatted); the chat panel keeps the history.
     var other = frame.role === 'cop' ? 'thief' : 'cop';
     var b = D.bubbles[frame.role];
-    b.textContent = msg;
+    b.innerHTML = html;
     b.style.opacity = 1;
     D.bubbles[other].style.opacity = 0;
   };

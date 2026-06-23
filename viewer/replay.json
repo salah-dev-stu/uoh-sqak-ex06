@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "Parley: Rooftop Pursuit",
-    "source": "committed sample run (deterministic; regenerate via make_sample_run)",
+    "source": "LIVE Claude CLI run (dynamic — differs every run)",
     "grid_size": [
       5,
       5
     ],
     "vision_radius": 1,
-    "num_subgames": 6,
+    "num_subgames": 3,
     "scoring": {
       "cop_win": 20,
       "thief_win": 10,
@@ -15,8 +15,8 @@
       "thief_loss": 5
     },
     "totals": {
-      "cop": 120,
-      "thief": 30
+      "cop": 45,
+      "thief": 20
     },
     "generated_from": "reports/sample_report.json"
   },
@@ -43,7 +43,7 @@
           "move": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
+          "message": "I hear you're looking for me, officer. Better start scanning the edges — I've got corners to my back and nowhere to run but *deeper* into this board.",
           "cop": [
             0,
             0
@@ -60,46 +60,36 @@
         {
           "move": 2,
           "role": "cop",
-          "action": "BARRIER",
-          "message": "I slam a steel shutter across the corner — slip past THAT.",
+          "action": "MOVE SE",
+          "message": "Ah, so you're penned against the perimeter—smart to admit it. That means every step you take deeper, you're narrowing your own escape routes. I'm starting from my corner and moving to intercept. You can't stay on the edges forever.",
           "cop": [
-            0,
-            0
+            1,
+            1
           ],
           "thief": [
             3,
             3
           ],
-          "barriers": [
-            [
-              0,
-              0
-            ]
-          ],
-          "barriers_left": 4,
+          "barriers": [],
+          "barriers_left": 5,
           "capture": false,
           "vision_radius": 1
         },
         {
           "move": 3,
           "role": "thief",
-          "action": "MOVE NW",
-          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "action": "MOVE SE",
+          "message": "I hear you circling, officer. But you're reading the board like a book, and I'm writing the story. Let me show you what happens when you follow the obvious path.",
           "cop": [
-            0,
-            0
+            1,
+            1
           ],
           "thief": [
-            2,
-            2
+            4,
+            4
           ],
-          "barriers": [
-            [
-              0,
-              0
-            ]
-          ],
-          "barriers_left": 4,
+          "barriers": [],
+          "barriers_left": 5,
           "capture": false,
           "vision_radius": 1
         },
@@ -107,22 +97,17 @@
           "move": 4,
           "role": "cop",
           "action": "MOVE SE",
-          "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
+          "message": "You think you've got me chasing shadows, but every word you speak narrows down where you *must* be. Corners have only two paths out—I'm tightening my net.",
           "cop": [
-            1,
-            1
-          ],
-          "thief": [
             2,
             2
           ],
-          "barriers": [
-            [
-              0,
-              0
-            ]
+          "thief": [
+            4,
+            4
           ],
-          "barriers_left": 4,
+          "barriers": [],
+          "barriers_left": 5,
           "capture": false,
           "vision_radius": 1
         },
@@ -130,22 +115,35 @@
           "move": 5,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "message": "*A low laugh echoes across the board.*\nYou've got geometry on your mind, officer—but geometry favors the one with options. Watch where your certainty takes you.",
           "cop": [
-            1,
-            1
+            2,
+            2
           ],
           "thief": [
-            1,
-            1
+            3,
+            3
           ],
-          "barriers": [
-            [
-              0,
-              0
-            ]
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 6,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "*Your eyes lock onto the figure in the sunlit space below and to your right.*\nYou talk a good game, but I've got eyes on you right now—and all your geometry won't change the fact that I'm closing in. No more riddles. Time to see if your options hold up when I'm breathing down your neck.",
+          "cop": [
+            3,
+            3
           ],
-          "barriers_left": 4,
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
           "capture": true,
           "vision_radius": 1
         }
@@ -153,7 +151,7 @@
     },
     {
       "index": 1,
-      "winner": "cop",
+      "winner": "thief",
       "start": {
         "thief": [
           4,
@@ -165,22 +163,22 @@
         ]
       },
       "scores": {
-        "cop": 20,
-        "thief": 5
+        "thief": 10,
+        "cop": 5
       },
       "frames": [
         {
           "move": 1,
           "role": "thief",
-          "action": "MOVE NW",
-          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "action": "MOVE N",
+          "message": "Well, well—looks like we're playing! I'm settled nice and snug in the corner where two walls meet. You'll have to work for this one, friend.",
           "cop": [
             0,
             0
           ],
           "thief": [
             3,
-            3
+            4
           ],
           "barriers": [],
           "barriers_left": 5,
@@ -191,7 +189,25 @@
           "move": 2,
           "role": "cop",
           "action": "MOVE SE",
-          "message": "Nowhere left along that wall. I'm one stride behind you and gaining.",
+          "message": "Ha! A corner, eh? That's just where you'll be easier to trap. I've got five barriers and a whole grid between us, and I'm not intimidated by you curling up in some dusty corner. I'm coming for you, and there's nowhere to hide on this board.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            3,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 3,
+          "role": "thief",
+          "action": "MOVE W",
+          "message": "Ha! Five barriers—impressive hardware, but you'll need to *find* me first before you can trap me. I'm not staying put like some amateur; I'm already moving. This grid's plenty big, and I know every shadow on this board. See you if you can catch up.",
           "cop": [
             1,
             1
@@ -206,13 +222,283 @@
           "vision_radius": 1
         },
         {
-          "move": 3,
+          "move": 4,
+          "role": "cop",
+          "action": "MOVE SE",
+          "message": "Oh, *moving* already? That's what they all say—until they run out of board. You can't dance around a grid forever, thief. I'm heading straight toward the heart of this board, and when escape routes start vanishing, we'll see how confident you sound then.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 5,
           "role": "thief",
-          "action": "MOVE NW",
-          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
+          "action": "MOVE SE",
+          "message": "I hear the confidence in your voice, but you're chasing a *shadow*, not a prize. The heart of the board? That's where *you* want me—easy to corner. I'm dancing to the edges where a good thief belongs, and by the time you realize I've already slipped past your net, I'll be breathing the open air while you're still fumbling in the middle.",
+          "cop": [
+            2,
+            2
+          ],
+          "thief": [
+            4,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 6,
+          "role": "cop",
+          "action": "MOVE E",
+          "message": "You think you're *clever* dodging toward the edges, but every direction you run is one less place to hide. I'm not fumbling in the middle anymore—I'm coming to *meet* you where the walls close in, and your \"open air\" becomes a dead end.",
+          "cop": [
+            2,
+            3
+          ],
+          "thief": [
+            4,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 7,
+          "role": "thief",
+          "action": "MOVE N",
+          "message": "You're right—the walls *are* closing in. But you're chasing where I *was*, not where I'm *going*. By the time you reach this corner, I'll already have slipped north along the edge, dancing just beyond your grasp.",
+          "cop": [
+            2,
+            3
+          ],
+          "thief": [
+            3,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 8,
+          "role": "cop",
+          "action": "MOVE NE",
+          "message": "You think you've got it all figured out—running up the side of this board to freedom. I'm cutting straight to your destination, thief. Let's see who gets there first.",
           "cop": [
             1,
-            1
+            4
+          ],
+          "thief": [
+            3,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 9,
+          "role": "thief",
+          "action": "MOVE W",
+          "message": "You're running to meet me at a place I'm already leaving. By the time you plant yourself in that corner, I'll be dancing circles around the middle of this board—where you're not looking, and where the walls won't save you.",
+          "cop": [
+            1,
+            4
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 10,
+          "role": "cop",
+          "action": "MOVE N",
+          "message": "Circles only tighten when there's a wall to hit. I'm heading straight for that middle you love so much—let's see how many circles you can dance when I'm already there waiting.\nUTH",
+          "cop": [
+            0,
+            4
+          ],
+          "thief": [
+            3,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 11,
+          "role": "thief",
+          "action": "MOVE NE",
+          "message": "You're right to come for the middle—but I'm already *gone*, slipping northeastward while you're still planning your arrival. The hunter always arrives to find only empty air.",
+          "cop": [
+            0,
+            4
+          ],
+          "thief": [
+            2,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 12,
+          "role": "cop",
+          "action": "MOVE SW",
+          "message": "You keep claiming you're slipping northeast, but you're caught between a corner and **my position in it**—there's nowhere further for you to slip but *backward*. The walls that hemmed you in before are tightening from behind now.",
+          "cop": [
+            1,
+            3
+          ],
+          "thief": [
+            2,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 13,
+          "role": "thief",
+          "action": "MOVE S",
+          "message": "Backward, yes—but \"backward\" into this board means *inward*, toward the open middle you're still racing to defend. You're wasting  chasing me here when I'm already where you're headed.",
+          "cop": [
+            1,
+            3
+          ],
+          "thief": [
+            3,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 14,
+          "role": "cop",
+          "action": "MOVE S",
+          "message": "If you're already in the middle like you claim, then I'm walking straight into you—*perfect*. Stop wasting breath and start running.",
+          "cop": [
+            2,
+            3
+          ],
+          "thief": [
+            3,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 15,
+          "role": "thief",
+          "action": "MOVE N",
+          "message": "You're right to come looking—but you're hunting a *shadow*, and shadows e moment the light shifts. I'm pivoting inward *right now*, away from this wall I've been baiting you toward, heading for the real open middle where your slow march can't corner me.",
+          "cop": [
+            2,
+            3
+          ],
+          "thief": [
+            2,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 16,
+          "role": "cop",
+          "action": "MOVE S",
+          "message": "You're pivoting *now*, but I'm already in motion—steady and inexorable toward that middle you keep describing. The difference between a shadow and a corner is that *I choose where the walls go*.",
+          "cop": [
+            3,
+            3
+          ],
+          "thief": [
+            2,
+            4
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 17,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "You choose where walls go, but I choose when to *leave*—and I'm already moving through the space where you haven't thought to look. Your walls trap slow prey, not ghosts.",
+          "cop": [
+            3,
+            3
+          ],
+          "thief": [
+            1,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 18,
+          "role": "cop",
+          "action": "MOVE NE",
+          "message": "You're walking straight into my reach—and I've been *waiting* for you to break cover. Every step you take toward \"the real open middle\" is a step closer to the cell I'm already standing in.",
+          "cop": [
+            2,
+            4
+          ],
+          "thief": [
+            1,
+            3
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 19,
+          "role": "thief",
+          "action": "MOVE SW",
+          "message": "I see you standing there, trying to funnel me straight to you—but I'm not running *into* your reach, I'm sliding *past it*. Your trap works on prey that panics; I'm dancing around you toward the real middle you haven't actually held yet.",
+          "cop": [
+            2,
+            4
           ],
           "thief": [
             2,
@@ -224,13 +510,13 @@
           "vision_radius": 1
         },
         {
-          "move": 4,
+          "move": 20,
           "role": "cop",
-          "action": "MOVE SE",
-          "message": "Every diagonal you take, I take too. The net draws tight now.",
+          "action": "MOVE W",
+          "message": "You're right—I haven't held the center yet. But I'm walking into it now, and there's nowhere left for you to dance once I'm there.",
           "cop": [
             2,
-            2
+            3
           ],
           "thief": [
             2,
@@ -238,7 +524,97 @@
           ],
           "barriers": [],
           "barriers_left": 5,
-          "capture": true,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 21,
+          "role": "thief",
+          "action": "MOVE W",
+          "message": "You've telegraphed your play perfectly—now watch me dance past it while you're still moving in. The center's all yours, empty as it'll be.",
+          "cop": [
+            2,
+            3
+          ],
+          "thief": [
+            2,
+            1
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 22,
+          "role": "cop",
+          "action": "MOVE N",
+          "message": "You keep describing your next ile I'm already moving to intercept it—you're dancing toward the edge, and I'm positioning at the corner where your steps will stop.",
+          "cop": [
+            1,
+            3
+          ],
+          "thief": [
+            2,
+            1
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 23,
+          "role": "thief",
+          "action": "MOVE S",
+          "message": "You're banking on my old —but I'm not running toward your corners. I'm sliding through the *open middle* while you're still positioning.",
+          "cop": [
+            1,
+            3
+          ],
+          "thief": [
+            3,
+            1
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 24,
+          "role": "cop",
+          "action": "MOVE S",
+          "message": "You're right—the middle *is* open, but only until I fill it. Let me come down from the top and see you dancing in that void you're so proud of.",
+          "cop": [
+            2,
+            3
+          ],
+          "thief": [
+            3,
+            1
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 25,
+          "role": "thief",
+          "action": "MOVE SW",
+          "message": "Come down all you want—I'm already moving toward the edges where your reach is shortest. By the time you fill that void, I'll be tucked into a corner you can't hold in time.",
+          "cop": [
+            2,
+            3
+          ],
+          "thief": [
+            4,
+            0
+          ],
+          "barriers": [],
+          "barriers_left": 5,
+          "capture": false,
           "vision_radius": 1
         }
       ]
@@ -265,7 +641,7 @@
           "move": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "message": "**Message to the Cop:**\nWell, well — I'm nestled in my corner, watching the board. You're out there somewhere, and I'm not waiting around to be cornered. Time to dance.\n****",
           "cop": [
             0,
             0
@@ -283,7 +659,7 @@
           "move": 2,
           "role": "cop",
           "action": "MOVE SE",
-          "message": "I hear your footsteps echoing off the eastern stairwell — I'm cutting the angle.",
+          "message": "**Message to the Thief:**\nHa! A corner, you say? How poetic — but a corner is just a trap with two walls closing in. You've painted yourself into a nice cozy box, and I'm walking straight toward it. Enjoy your last moments of freedom.",
           "cop": [
             1,
             1
@@ -300,14 +676,14 @@
         {
           "move": 3,
           "role": "thief",
-          "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "action": "MOVE W",
+          "message": "**Message to the Cop:**\nOh, you're confident, aren't you? Trouble is, corners have *exits* if you know which way the walls run. You're so sure of where I am — but I think you've drawn your own map, and it's missing a few details about *this* board.",
           "cop": [
             1,
             1
           ],
           "thief": [
-            2,
+            3,
             2
           ],
           "barriers": [],
@@ -319,48 +695,28 @@
           "move": 4,
           "role": "cop",
           "action": "MOVE SE",
-          "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
+          "message": "Your confidence is showing cracks—you wouldn't need to remind me about exits if you truly had one. I *know* this board, and I'm walking toward you systematically. No corner is safe when the hunter doesn't stop moving.",
           "cop": [
             2,
             2
           ],
           "thief": [
-            2,
+            3,
             2
           ],
           "barriers": [],
           "barriers_left": 5,
-          "capture": true,
+          "capture": false,
           "vision_radius": 1
-        }
-      ]
-    },
-    {
-      "index": 3,
-      "winner": "cop",
-      "start": {
-        "thief": [
-          4,
-          4
-        ],
-        "cop": [
-          0,
-          0
-        ]
-      },
-      "scores": {
-        "cop": 20,
-        "thief": 5
-      },
-      "frames": [
+        },
         {
-          "move": 1,
+          "move": 5,
           "role": "thief",
-          "action": "MOVE NW",
-          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "action": "MOVE E",
+          "message": "**Message to the Cop:**\nSystematic—there's your weakness. You're marching down a predetermined path, convinced I'm waiting in that corner like some cornered animal. But *I* see you coming from a mile away, and I'm already *not* where you're walking toward. Predictability is a hunter's greatest enemy.",
           "cop": [
-            0,
-            0
+            2,
+            2
           ],
           "thief": [
             3,
@@ -372,237 +728,17 @@
           "vision_radius": 1
         },
         {
-          "move": 2,
+          "move": 6,
           "role": "cop",
           "action": "MOVE SE",
-          "message": "Nowhere left along that wall. I'm one stride behind you and gaining.",
+          "message": "You think you've vanished from my sight, but I'm looking *right at you*—one step to my south-east. Your grand monologue about my predictability doesn't change the fact that I can see you clear as day. Now watch as this \"predetermined path\" leads me straight to you.",
           "cop": [
-            1,
-            1
+            3,
+            3
           ],
           "thief": [
             3,
             3
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 3,
-          "role": "thief",
-          "action": "MOVE NW",
-          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
-          "cop": [
-            1,
-            1
-          ],
-          "thief": [
-            2,
-            2
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 4,
-          "role": "cop",
-          "action": "MOVE SE",
-          "message": "Every diagonal you take, I take too. The net draws tight now.",
-          "cop": [
-            2,
-            2
-          ],
-          "thief": [
-            2,
-            2
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": true,
-          "vision_radius": 1
-        }
-      ]
-    },
-    {
-      "index": 4,
-      "winner": "cop",
-      "start": {
-        "thief": [
-          4,
-          4
-        ],
-        "cop": [
-          0,
-          0
-        ]
-      },
-      "scores": {
-        "cop": 20,
-        "thief": 5
-      },
-      "frames": [
-        {
-          "move": 1,
-          "role": "thief",
-          "action": "MOVE NW",
-          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
-          "cop": [
-            0,
-            0
-          ],
-          "thief": [
-            3,
-            3
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 2,
-          "role": "cop",
-          "action": "MOVE SE",
-          "message": "I hear your footsteps echoing off the eastern stairwell — I'm cutting the angle.",
-          "cop": [
-            1,
-            1
-          ],
-          "thief": [
-            3,
-            3
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 3,
-          "role": "thief",
-          "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
-          "cop": [
-            1,
-            1
-          ],
-          "thief": [
-            2,
-            2
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 4,
-          "role": "cop",
-          "action": "MOVE SE",
-          "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
-          "cop": [
-            2,
-            2
-          ],
-          "thief": [
-            2,
-            2
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": true,
-          "vision_radius": 1
-        }
-      ]
-    },
-    {
-      "index": 5,
-      "winner": "cop",
-      "start": {
-        "thief": [
-          4,
-          4
-        ],
-        "cop": [
-          0,
-          0
-        ]
-      },
-      "scores": {
-        "cop": 20,
-        "thief": 5
-      },
-      "frames": [
-        {
-          "move": 1,
-          "role": "thief",
-          "action": "MOVE NW",
-          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
-          "cop": [
-            0,
-            0
-          ],
-          "thief": [
-            3,
-            3
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 2,
-          "role": "cop",
-          "action": "MOVE SE",
-          "message": "Nowhere left along that wall. I'm one stride behind you and gaining.",
-          "cop": [
-            1,
-            1
-          ],
-          "thief": [
-            3,
-            3
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 3,
-          "role": "thief",
-          "action": "MOVE NW",
-          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
-          "cop": [
-            1,
-            1
-          ],
-          "thief": [
-            2,
-            2
-          ],
-          "barriers": [],
-          "barriers_left": 5,
-          "capture": false,
-          "vision_radius": 1
-        },
-        {
-          "move": 4,
-          "role": "cop",
-          "action": "MOVE SE",
-          "message": "Every diagonal you take, I take too. The net draws tight now.",
-          "cop": [
-            2,
-            2
-          ],
-          "thief": [
-            2,
-            2
           ],
           "barriers": [],
           "barriers_left": 5,
