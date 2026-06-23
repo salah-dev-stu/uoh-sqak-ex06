@@ -203,7 +203,7 @@ prd.md · Plan.md · Todo.md (520 tasks)
 
 SDK layer (R1) · OOP + class diagram (R2) · **wired Gatekeeper on every external
 call, meta-test enforced** (R3) · config-driven, zero hardcoding (R4/R10) · version
-single-source 1.20 (R5) · TDD, 98% cov, fully mocked (R6/R9) · **≤150 lines/file raw
+single-source 1.21 (R5) · TDD, 98% cov, fully mocked (R6/R9) · **≤150 lines/file raw
 AND logical** (R7) · ruff clean (R8) · no secrets, `.env-example` (R11) · uv only
 (R12) · continuous commits + green Python-3.13 CI (R13).
 
