@@ -57,7 +57,7 @@ def main() -> int:
             va="center", fontsize=13, fontweight="bold")
     _edge(ax, "orch", "cop", COP, 0.45)
     _edge(ax, "orch", "thief", NEON, 0.6)
-    for key, (x, y, title, sub, color) in NODES.items():
+    for x, y, title, sub, color in NODES.values():
         _box(ax, x, y, title, sub, color)
     ax.text(0.5, 0.045, "observation / prompt out  →   free-NL message + action back",
             color=MUTED, ha="center", va="center", fontsize=9, style="italic")
