@@ -1,0 +1,15 @@
+{
+  "version": "1.00",
+  "log_level": "INFO",
+  "seed": 1729,
+  "paths": {
+    "reports_dir": "reports",
+    "transcripts_dir": "reports/transcripts",
+    "ledger": "reports/runs/gate_ledger.json"
+  },
+  "gui": {
+    "enabled": false,
+    "backend": "tkinter",
+    "cell_pixels": 64
+  }
+}
