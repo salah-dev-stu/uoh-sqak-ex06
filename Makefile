@@ -16,9 +16,13 @@ check: lint test ## all gates
 sample:          ## regenerate the committed sample run artifacts
 	uv run python scripts/make_sample_run.py
 
-replay: sample   ## rebuild the 3D viewer replay data from the sample
+replay: sample   ## rebuild the 3D viewer replay data from the deterministic sample
 	uv run python scripts/export_replay.py
 	@echo "→ refresh the viewer to see the new replay"
+
+replay-live:     ## DYNAMIC replay from a LIVE Claude CLI game (longer; differs each run)
+	uv run python scripts/export_live_replay.py
+	@echo "→ refresh the viewer"
 
 viewer:          ## launch the 3D replay theater (static server + open browser)
 	uv run python scripts/serve_viewer.py

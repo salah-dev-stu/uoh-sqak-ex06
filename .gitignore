@@ -46,3 +46,8 @@ gate_ledger.json
 .idea/
 .vscode/
 *.swp
+
+# Live replay temp/artifacts (non-deterministic; regenerate with make replay-live)
+.live-tmp/
+reports/live_report.json
+reports/transcripts/live/
