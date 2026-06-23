@@ -625,3 +625,22 @@
 - [ ] T502 Buffer: address any review nit found in T499
 - [ ] T503 Buffer: re-run full suite one last time
 - [ ] T504 Buffer: confirm memory + submission metadata correct
+
+## M14 — gap-closing tasks (from Phase 4 critical verify)
+
+- [ ] T505 `scripts/gmail_oauth_setup.py` — one-time OAuth consent → token.json (H7 real path); documented, not run in tests
+- [ ] T506 Test gmail_oauth_setup builds flow from creds path (mocked google_auth_oauthlib)
+- [ ] T507 Integration: start a REAL uvicorn FastMCP cop server on an ephemeral port; client round-trips a tool with bearer auth (proves H1 HTTP + H8 auth, not just in-memory)
+- [ ] T508 Integration: real server rejects a request with a bad bearer token (H8)
+- [ ] T509 Expose an MCP **resource** (`game://rules`) on each server (tools AND resources per spec) (H1/H3)
+- [ ] T510 Test the rules resource returns config-derived rules text (no LLM, no mutation) (H3)
+- [ ] T511 Commit `reports/sample_gate_ledger.json` as wired-Gatekeeper proof (R3); adjust .gitignore to allow the sample
+- [ ] T512 Test the committed sample ledger has gate events for llm + mcp + report (R3)
+- [ ] T513 `claude` CLI preflight in ClaudeCliProvider: clear, actionable error if bin/subscription missing (H9 robustness)
+- [ ] T514 Test preflight raises documented error when bin absent (mocked which)
+- [ ] T515 Pin default report recipient `rmisegal+uoh26b@gmail.com` in `config/report.json` (spec) (H7)
+- [ ] T516 Test report builder addresses the configured recipient (H7)
+- [ ] T517 Persist a per-move **dispute log** file `reports/transcripts/<run>/moves.jsonl` (lecture: mandatory logs — timestamp, positions, action, NL msg, barriers-left)
+- [ ] T518 Test dispute log line schema is complete + parseable
+- [ ] T519 README: add a "logs as evidence" note + link the dispute log (lecture)
+- [ ] T520 Cross-check coverage matrix `docs/verify-coverage-matrix.md` — every PRD demand → task(s); no orphans
