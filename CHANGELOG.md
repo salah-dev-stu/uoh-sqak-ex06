@@ -4,6 +4,13 @@ Versioning per R5: start at 1.00, **+0.01 per change**, single source of truth i
 `src/parley/shared/version.py` (mirrored in `config/runtime.json`, asserted by
 `scripts/check_version_sync.py`).
 
+## 1.32 — 2026-06-23 · Cosmetic: coherent live-game stills + honest README
+- Refreshed the last two stale stills from the **live Claude-CLI replay**
+  (`fog-thief.png`, `capture.png`) so every viewer still comes from one coherent match
+- Updated the tests badge to the real count (**142 passing**)
+- Swapped the README dialogue excerpts to genuine lines from the committed live match
+- No barrier moment exists in the live replay, so `barrier.png` was left unchanged
+
 ## 1.24 — 2026-06-23 · Standout: 3D Replay Theater (SHOULD tier)
 - **Fog of war + COP / THIEF / DIRECTOR view toggle** — the partial-observation
   (Dec-POMDP) showcase: tiles beyond the viewed agent's vision radius go dark and the
