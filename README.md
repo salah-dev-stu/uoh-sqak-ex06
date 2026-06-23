@@ -46,13 +46,25 @@ capture at move 4. Each caption is the agent's real free-NL taunt that turn.*
 A cinematic, neon-noir **3D replay** of a **real committed agent game** — the free
 natural-language taunts (the graded heart) rise as **speech bubbles** and stream into a
 noir **chat panel**, while the Cop (blue) and Thief (amber) glide across a glowing
-rooftop to the capture. **It is a replay theater, not a playable game.**
+rooftop, drop neon barriers, and meet in a particle-burst capture. **It is a replay
+theater, not a playable game.**
 
 ![3D replay](assets/viewer/parley-replay.gif)
 
-| Mid-chase — NL taunts as bubbles + synced chat | Capture — cop corners the thief |
+### Fog of war — *seeing* the partial-observation problem (Dec-POMDP)
+
+Toggle **Director / Cop's view / Thief's view**. In a player's view the board beyond
+that agent's vision radius goes dark **and the opponent figure vanishes** — yet its
+taunt still arrives in the chat. You literally *watch* an agent that must infer its
+rival's position **from words alone** — the exact challenge the assignment grades.
+
+| Cop's view — Thief is invisible, only its words arrive | Thief's view — Cop is unseen |
 |---|---|
-| ![chase](assets/viewer/chase.png) | ![capture](assets/viewer/capture.png) |
+| ![cop fog](assets/viewer/fog-cop.png) | ![thief fog](assets/viewer/fog-thief.png) |
+
+| Neon barrier slammed onto the roof | Capture — particle burst + arrest |
+|---|---|
+| ![barrier](assets/viewer/barrier.png) | ![capture](assets/viewer/capture-fx.png) |
 
 **Open it — zero setup, two ways:**
 ```bash

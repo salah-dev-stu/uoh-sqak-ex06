@@ -4,6 +4,14 @@ Versioning per R5: start at 1.00, **+0.01 per change**, single source of truth i
 `src/parley/shared/version.py` (mirrored in `config/runtime.json`, asserted by
 `scripts/check_version_sync.py`).
 
+## 1.24 — 2026-06-23 · Standout: 3D Replay Theater (SHOULD tier)
+- **Fog of war + COP / THIEF / DIRECTOR view toggle** — the partial-observation
+  (Dec-POMDP) showcase: tiles beyond the viewed agent's vision radius go dark and the
+  opponent figure vanishes, while its taunt still arrives in the chat
+- Neon **barriers** that slam down (cop drops one in sub-game 1 of the sample now)
+- **Capture particle burst** + the existing CAPTURE banner; brighter neon polish
+- README fog-of-war/barrier/capture showcase; 142 tests green, 98% cov; CI Python-only
+
 ## 1.21–1.23 — 2026-06-23 · Standout: 3D Replay Theater (MUST tier)
 - **1.21** viewer PRD + Plan + Todo (303 tasks) under `docs/viewer/`
 - **1.22** `parley.viewer` replay exporter + tests; generated real replay data

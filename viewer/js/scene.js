@@ -37,6 +37,7 @@
     S.scene.add(base);
 
     S.tiles = {};
+    S.edges = {};
     for (var r = 0; r < rows; r++) {
       for (var c = 0; c < cols; c++) {
         var p = P.util.tileToWorld(r, c, grid);
@@ -53,6 +54,7 @@
         edges.position.copy(p);
         S.scene.add(tile); S.scene.add(edges);
         S.tiles[r + ',' + c] = tile;
+        S.edges[r + ',' + c] = edges;
       }
     }
 

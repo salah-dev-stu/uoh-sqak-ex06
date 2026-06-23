@@ -1,7 +1,7 @@
 {
   "exercise": "EX06",
   "title": "Dual AI Agent Conversation via MCP Servers \u2014 Cops & Robbers",
-  "version": "1.20",
+  "version": "1.23",
   "recipient": "rmisegal+uoh26b@gmail.com",
   "subject": "EX06 parley \u2014 autonomous cops & robbers game report (uoh-sqak)",
   "team": {
@@ -50,7 +50,7 @@
       "index": 0,
       "cop_role_team": "uoh-sqak",
       "winner": "cop",
-      "moves": 4,
+      "moves": 5,
       "scores": {
         "cop": 20,
         "thief": 5
@@ -75,17 +75,17 @@
         {
           "move_no": 2,
           "role": "cop",
-          "action": "MOVE SE",
-          "message": "I hear your footsteps echoing off the eastern stairwell \u2014 I'm cutting the angle.",
+          "action": "BARRIER",
+          "message": "I slam a steel shutter across the corner \u2014 slip past THAT.",
           "before": [
             0,
             0
           ],
           "after": [
-            1,
-            1
+            0,
+            0
           ],
-          "barriers_left": 5,
+          "barriers_left": 4,
           "ts": "2026-06-23T12:00:00+03:00"
         },
         {
@@ -101,7 +101,7 @@
             2,
             2
           ],
-          "barriers_left": 5,
+          "barriers_left": 4,
           "ts": "2026-06-23T12:00:00+03:00"
         },
         {
@@ -110,14 +110,30 @@
           "action": "MOVE SE",
           "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
           "before": [
+            0,
+            0
+          ],
+          "after": [
             1,
             1
           ],
-          "after": [
+          "barriers_left": 4,
+          "ts": "2026-06-23T12:00:00+03:00"
+        },
+        {
+          "move_no": 5,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "before": [
             2,
             2
           ],
-          "barriers_left": 5,
+          "after": [
+            1,
+            1
+          ],
+          "barriers_left": 4,
           "ts": "2026-06-23T12:00:00+03:00"
         }
       ]
@@ -136,7 +152,7 @@
           "move_no": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "message": "Too slow \u2014 I cut through the gap and you grabbed nothing but air.",
           "before": [
             4,
             4
@@ -168,7 +184,7 @@
           "move_no": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Too slow \u2014 I cut through the gap and you grabbed nothing but air.",
+          "message": "You'll never pin me on open floor \u2014 I slip back toward the high corner.",
           "before": [
             3,
             3
@@ -212,7 +228,7 @@
           "move_no": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "You'll never pin me on open floor \u2014 I slip back toward the high corner.",
+          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
           "before": [
             4,
             4
@@ -244,7 +260,7 @@
           "move_no": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
           "before": [
             3,
             3
@@ -288,7 +304,7 @@
           "move_no": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "message": "Too slow \u2014 I cut through the gap and you grabbed nothing but air.",
           "before": [
             4,
             4
@@ -320,7 +336,7 @@
           "move_no": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Too slow \u2014 I cut through the gap and you grabbed nothing but air.",
+          "message": "You'll never pin me on open floor \u2014 I slip back toward the high corner.",
           "before": [
             3,
             3
@@ -364,7 +380,7 @@
           "move_no": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "You'll never pin me on open floor \u2014 I slip back toward the high corner.",
+          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
           "before": [
             4,
             4
@@ -396,7 +412,7 @@
           "move_no": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
           "before": [
             3,
             3
@@ -440,7 +456,7 @@
           "move_no": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "message": "Too slow \u2014 I cut through the gap and you grabbed nothing but air.",
           "before": [
             4,
             4
@@ -472,7 +488,7 @@
           "move_no": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Too slow \u2014 I cut through the gap and you grabbed nothing but air.",
+          "message": "You'll never pin me on open floor \u2014 I slip back toward the high corner.",
           "before": [
             3,
             3

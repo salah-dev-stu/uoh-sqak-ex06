@@ -153,24 +153,24 @@
 - [ ] V129 **CHECKPOINT: report with screenshot; await go for SHOULD/COULD**
 
 ## VK — SHOULD (after checkpoint)
-- [ ] V130 `viewer/js/fog.js` — fog-of-war shroud outside vision radius
-- [ ] V131 fog: Chebyshev visibility from viewed agent
-- [ ] V132 fog: dim/hide tiles outside radius
-- [ ] V133 fog: hide opponent figure when out of view (partial obs!)
-- [ ] V134 fog: COP / THIEF / DIRECTOR toggle buttons
-- [ ] V135 fog: DIRECTOR = omniscient (no fog)
-- [ ] V136 fog: smooth transition on toggle
-- [ ] V137 fog: expose `PARLEY.fog` API
-- [ ] V138 `viewer/js/barriers.js` — neon wall mesh per barrier
-- [ ] V139 barriers: slam-down animation on placement frame
-- [ ] V140 barriers: block visual (both agents)
-- [ ] V141 `viewer/js/fx.js` — capture particle burst
-- [ ] V142 fx: camera zoom/punch on capture
-- [ ] V143 fx: bloom-like glow (additive sprites, no postprocessing dep)
+- [x] V130 `viewer/js/fog.js` — fog-of-war shroud outside vision radius
+- [x] V131 fog: Chebyshev visibility from viewed agent
+- [x] V132 fog: dim/hide tiles outside radius
+- [x] V133 fog: hide opponent figure when out of view (partial obs!)
+- [x] V134 fog: COP / THIEF / DIRECTOR toggle buttons
+- [x] V135 fog: DIRECTOR = omniscient (no fog)
+- [x] V136 fog: smooth transition on toggle
+- [x] V137 fog: expose `PARLEY.fog` API
+- [x] V138 `viewer/js/barriers.js` — neon wall mesh per barrier
+- [x] V139 barriers: slam-down animation on placement frame
+- [x] V140 barriers: block visual (both agents)
+- [x] V141 `viewer/js/fx.js` — capture particle burst
+- [x] V142 fx: camera zoom/punch on capture
+- [x] V143 fx: bloom-like glow (additive sprites, no postprocessing dep)
 - [ ] V144 fx: neon trail behind moving agent
-- [ ] V145 SHOULD screenshots refresh (fog/view toggle/capture FX)
-- [ ] V146 README refresh with fog-of-war shots
-- [ ] V147 Gates green; bump version; commit/push
+- [x] V145 SHOULD screenshots refresh (fog/view toggle/capture FX)
+- [x] V146 README refresh with fog-of-war shots
+- [x] V147 Gates green; bump version; commit/push
 
 ## VL — COULD (only if time)
 - [ ] V148 MCP message-flow inset (two server nodes + animated messages)

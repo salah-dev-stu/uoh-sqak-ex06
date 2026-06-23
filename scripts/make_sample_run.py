@@ -39,16 +39,22 @@ def make_backend():
     counter = {"cop": 0, "thief": 0}
 
     def curated_subprocess(argv, timeout):
+        import json
+
         from parley.shared.gatekeeper_types import RunResult
 
         prompt = argv[2] if len(argv) > 2 else ""
         is_cop = "determined COP" in prompt
-        pool, move = (COP_LINES, "SE") if is_cop else (THIEF_LINES, "NW")
         key = "cop" if is_cop else "thief"
+        # The cop drops one neon barrier on its very first turn (shows the wall in
+        # the replay), then chases. Everything stays a real, legal engine move.
+        if is_cop and counter["cop"] == 0:
+            counter["cop"] += 1
+            reply = "I slam a steel shutter across the corner — slip past THAT.\nBARRIER"
+            return RunResult(0, json.dumps({"result": reply}), "")
+        pool, move = (COP_LINES, "SE") if is_cop else (THIEF_LINES, "NW")
         line = pool[counter[key] % len(pool)]
         counter[key] += 1
-        import json
-
         return RunResult(0, json.dumps({"result": f"{line}\nMOVE: {move}"}), "")
 
     def fake_google(token_path, raw):

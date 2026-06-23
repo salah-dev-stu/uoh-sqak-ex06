@@ -61,18 +61,23 @@ window.REPLAY = {
         {
           "move": 2,
           "role": "cop",
-          "action": "MOVE SE",
-          "message": "I hear your footsteps echoing off the eastern stairwell — I'm cutting the angle.",
+          "action": "BARRIER",
+          "message": "I slam a steel shutter across the corner — slip past THAT.",
           "cop": [
-            1,
-            1
+            0,
+            0
           ],
           "thief": [
             3,
             3
           ],
-          "barriers": [],
-          "barriers_left": 5,
+          "barriers": [
+            [
+              0,
+              0
+            ]
+          ],
+          "barriers_left": 4,
           "capture": false,
           "vision_radius": 1
         },
@@ -82,15 +87,20 @@ window.REPLAY = {
           "action": "MOVE NW",
           "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
           "cop": [
-            1,
-            1
+            0,
+            0
           ],
           "thief": [
             2,
             2
           ],
-          "barriers": [],
-          "barriers_left": 5,
+          "barriers": [
+            [
+              0,
+              0
+            ]
+          ],
+          "barriers_left": 4,
           "capture": false,
           "vision_radius": 1
         },
@@ -100,15 +110,43 @@ window.REPLAY = {
           "action": "MOVE SE",
           "message": "You drifted toward the open centre; careless. I close the gap corner by corner.",
           "cop": [
-            2,
-            2
+            1,
+            1
           ],
           "thief": [
             2,
             2
           ],
-          "barriers": [],
-          "barriers_left": 5,
+          "barriers": [
+            [
+              0,
+              0
+            ]
+          ],
+          "barriers_left": 4,
+          "capture": false,
+          "vision_radius": 1
+        },
+        {
+          "move": 5,
+          "role": "thief",
+          "action": "MOVE NW",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "cop": [
+            1,
+            1
+          ],
+          "thief": [
+            1,
+            1
+          ],
+          "barriers": [
+            [
+              0,
+              0
+            ]
+          ],
+          "barriers_left": 4,
           "capture": true,
           "vision_radius": 1
         }
@@ -136,7 +174,7 @@ window.REPLAY = {
           "move": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
           "cop": [
             0,
             0
@@ -172,7 +210,7 @@ window.REPLAY = {
           "move": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
           "cop": [
             1,
             1
@@ -228,7 +266,7 @@ window.REPLAY = {
           "move": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
+          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
           "cop": [
             0,
             0
@@ -264,7 +302,7 @@ window.REPLAY = {
           "move": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
           "cop": [
             1,
             1
@@ -320,7 +358,7 @@ window.REPLAY = {
           "move": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
           "cop": [
             0,
             0
@@ -356,7 +394,7 @@ window.REPLAY = {
           "move": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
           "cop": [
             1,
             1
@@ -412,7 +450,7 @@ window.REPLAY = {
           "move": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
+          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
           "cop": [
             0,
             0
@@ -448,7 +486,7 @@ window.REPLAY = {
           "move": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Nice try, but the shadows by the far wall are mine; gone before you turn.",
+          "message": "I hear you closing, so I double along the top edge where you can't follow.",
           "cop": [
             1,
             1
@@ -504,7 +542,7 @@ window.REPLAY = {
           "move": 1,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "I hear you closing, so I double along the top edge where you can't follow.",
+          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
           "cop": [
             0,
             0
@@ -540,7 +578,7 @@ window.REPLAY = {
           "move": 3,
           "role": "thief",
           "action": "MOVE NW",
-          "message": "Too slow — I cut through the gap and you grabbed nothing but air.",
+          "message": "You'll never pin me on open floor — I slip back toward the high corner.",
           "cop": [
             1,
             1
