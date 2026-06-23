@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/salah-dev-stu/uoh-sqak-ex06/actions/workflows/ci.yml/badge.svg)](https://github.com/salah-dev-stu/uoh-sqak-ex06/actions/workflows/ci.yml)
 ![python](https://img.shields.io/badge/python-3.13-blue)
-![tests](https://img.shields.io/badge/tests-127%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-142%20passing-brightgreen)
 ![coverage](https://img.shields.io/badge/coverage-98%25-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
@@ -23,14 +23,14 @@ partially-observable grid. Each runs on **its own FastMCP server**; the agents
 > opponents inferring each other's position from words alone are doing.
 
 ```
-move  3 | thief MOVE NW | "I hear you closing, so I double along the top edge where you can't follow."
+move  3 | thief MOVE W | "Five barriers—impressive hardware, but you'll need to *find* me first. I'm already moving; I know every shadow on this board."
 . . . . .
 . C . . .
-. . T . .
 . . . . .
+. . . T .
 . . . . .
 ```
-*An excerpt from the committed [sample run](reports/transcripts/sample/transcript.md) — free
+*An excerpt from the committed [live Claude-CLI match](viewer/replay.json) — free
 natural language drives every move; the board is the orchestrator's authoritative state.*
 
 ![the chase, sub-game 1](docs/figures/chase_filmstrip.png)
@@ -185,11 +185,13 @@ cell), **survival** (25 moves), or a **barrier trap**. Start small (2×2) and gr
 
 The prompt **forbids coordinates/JSON** and demands prose; the parser splits the
 free-NL message from a trailing `MOVE:`/`BARRIER` token and **scrubs any leaked
-`(x,y)`**. A test scans the committed transcript and fails on coordinate leakage. Real
-exchange from the sample run:
+`(x,y)`**. A test scans the committed transcript and fails on coordinate leakage. A real
+exchange from the committed **live Claude-CLI match** (sub-game 2, opening turns):
 
-> **cop:** *"I hear your footsteps echoing off the eastern stairwell — I'm cutting the angle."*
-> **thief:** *"You'll never pin me on open floor — I slip back toward the high corner."*
+> **thief:** *"Well, well — looks like we're playing! I'm settled nice and snug in the corner where two walls meet. You'll have to work for this one, friend."*
+> **cop:** *"Ha! A corner, eh? That's just where you'll be easier to trap. I'm coming for you, and there's nowhere to hide on this board."*
+> **thief:** *"Five barriers — impressive hardware, but you'll need to *find* me first. I'm already moving; I know every shadow on this board."*
+> **cop:** *"Oh, *moving* already? That's what they all say — until they run out of board. You can't dance around a grid forever, thief."*
 
 Position is communicated as walls, corners, and compass directions — exactly the
 ambiguity a distributed multi-agent system must tolerate.
