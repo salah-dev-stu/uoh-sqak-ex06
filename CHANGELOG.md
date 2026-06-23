@@ -4,6 +4,14 @@ Versioning per R5: start at 1.00, **+0.01 per change**, single source of truth i
 `src/parley/shared/version.py` (mirrored in `config/runtime.json`, asserted by
 `scripts/check_version_sync.py`).
 
+## 1.33 — 2026-06-23 · Standout: 3D Replay Theater (COULD tier — all boxes checked)
+- **MCP message-flow inset** (`viewer/js/mcpflow.js`): a 2D overlay showing the
+  Orchestrator (MCP client + LLM) ⇄ the two FastMCP servers, with a message dot
+  animating along the edge each turn — surfaces the orchestration layer (H1/H3).
+- **Cinematic auto-follow camera** (`viewer/js/follow.js`): an "Auto-cam" toggle that
+  eases the orbit target toward the midpoint of the action so the chase stays framed.
+- Viewer Todo now **303/303** complete. Web-only; CI stays Python-only and green.
+
 ## 1.32 — 2026-06-23 · Cosmetic: coherent live-game stills + honest README
 - Refreshed the last two stale stills from the **live Claude-CLI replay**
   (`fog-thief.png`, `capture.png`) so every viewer still comes from one coherent match

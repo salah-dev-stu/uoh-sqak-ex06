@@ -15,6 +15,7 @@
         <button id="view-director" class="view-btn" title="omniscient">Director</button>
         <button id="view-cop" class="view-btn" title="cop's partial view">Cop's view</button>
         <button id="view-thief" class="view-btn" title="thief's partial view">Thief's view</button>
+        <button id="follow" class="view-btn" title="cinematic auto-follow camera">Auto-cam</button>
       </div>
     </header>
 
@@ -23,6 +24,10 @@
         <div id="bubbles"></div>
         <div id="banner"></div>
         <div id="fog-hint"></div>
+        <div id="mcp-inset" title="MCP message flow: orchestrator ⇄ the two FastMCP servers">
+          <div class="inset-label">MCP message flow</div>
+          <canvas id="mcp-canvas"></canvas>
+        </div>
       </div>
       <aside id="panel">
         <h2>Dialogue <small>free natural language (H2)</small></h2>
@@ -70,6 +75,8 @@
   <script src="js/fog.js"></script>
   <script src="js/barriers.js"></script>
   <script src="js/fx.js"></script>
+  <script src="js/mcpflow.js"></script>
+  <script src="js/follow.js"></script>
   <script src="js/controls.js"></script>
   <script src="js/app.js"></script>
 </body>

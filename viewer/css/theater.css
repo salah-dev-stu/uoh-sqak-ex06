@@ -31,6 +31,13 @@ header .src span { color: #9fb4ff; }
   background: rgba(8,12,22,.78); border: 1px solid #22304a; border-radius: 10px;
   padding: 7px 14px; transition: opacity .3s; pointer-events: none; }
 
+#mcp-inset { position: absolute; right: 14px; bottom: 14px; width: 230px; height: 150px;
+  background: rgba(6,10,18,.72); border: 1px solid #1b273d; border-radius: 10px;
+  padding: 4px; pointer-events: none; }
+.inset-label { font-size: 9.5px; letter-spacing: .5px; text-transform: uppercase;
+  color: var(--muted); padding: 3px 6px 0; }
+#mcp-canvas { width: 100%; height: 122px; display: block; }
+
 main { display: grid; grid-template-columns: 1fr 360px; min-height: 0; }
 #stage { position: relative; overflow: hidden; }
 #stage canvas { display: block; width: 100%; height: 100%; }

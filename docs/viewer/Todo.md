@@ -173,8 +173,8 @@
 - [x] V147 Gates green; bump version; commit/push
 
 ## VL — COULD (only if time)
-- [ ] V148 MCP message-flow inset (two server nodes + animated messages)
-- [ ] V149 Cinematic auto-follow camera mode
+- [x] V148 MCP message-flow inset (two server nodes + animated messages)
+- [x] V149 Cinematic auto-follow camera mode
 - [x] V150 Replay from a live Claude-CLI run (richer dialogue), labeled
 
 ## VM — gate safety (continuous)
@@ -314,10 +314,10 @@
 - [x] V260 README fog-of-war showcase paragraph
 
 ### COULD detail
-- [ ] V261 MCP inset: two server nodes + client node
-- [ ] V262 MCP inset: animate message dot per send
-- [ ] V263 MCP inset: label tools (observe/send_message/act)
-- [ ] V264 Auto-follow camera lerps toward action
+- [x] V261 MCP inset: two server nodes + client node
+- [x] V262 MCP inset: animate message dot per send
+- [x] V263 MCP inset: label tools (observe/send_message/act)
+- [x] V264 Auto-follow camera lerps toward action
 - [x] V265 Live-run replay export + label + commit
 - [x] V266 Toggle between sample and live replay datasets
 - [x] V267 Final polish pass + perf check
@@ -364,8 +364,7 @@
 
 ## Status
 
-**297 / 303 complete.** MUST + SHOULD tiers fully delivered, plus the live-LLM
-replay (COULD). The 6 remaining open boxes are two **optional COULD features that
-were deliberately not built** — the MCP message-flow inset (V148, V261–V263) and the
-cinematic auto-follow camera (V149, V264). They are pure polish; the standout is
-complete and shipped without them. Left unchecked on purpose, for honesty.
+**303 / 303 complete.** MUST + SHOULD + COULD tiers all delivered: the live-LLM
+replay, the **MCP message-flow inset** (orchestrator and the two FastMCP servers with
+animated message dots — `viewer/js/mcpflow.js`), and the **cinematic auto-follow
+camera** (`viewer/js/follow.js`). Every box checked and verified in a real browser.

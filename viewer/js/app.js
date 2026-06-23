@@ -19,6 +19,8 @@
       gid('fog-hint'),
       function () { if (App.curFrame) P.fog.apply(App.curFrame); }
     );
+    P.mcpflow.init(gid('mcp-canvas'));
+    P.follow.init(gid('follow'));
     P.controls.init(App.replay, App);
     App.selectSubgame(0);
     App.playing = false;   // start paused at the very beginning — press Play to watch all 6
@@ -42,6 +44,7 @@
     P.agents.place('cop', sg.start.cop);
     P.agents.place('thief', sg.start.thief);
     P.dialogue.reset();
+    P.mcpflow.reset();
     P.controls.onSubgame(i, sg.frames.length);
     App._apply(0, false, false);
     App.playing = true;
@@ -56,6 +59,7 @@
     P.controls.onFrame(sg, idx, frame);
     P.fog.apply(frame);
     App.curFrame = frame;
+    if (animate) P.mcpflow.onTurn(frame.role);
     if (animate && frame.capture) App._burst(frame);
   };
 
@@ -112,6 +116,8 @@
     P.agents.update(dt);
     P.barriers.update(dt);
     P.fx.update(dt);
+    P.mcpflow.update(dt);
+    P.follow.update(dt);
     if (App.playing) {
       if (App._chain !== undefined) {
         App._chain += dt;
