@@ -41,8 +41,11 @@
     var html = mdToHtml(msg);
     line.innerHTML = '<span class="who">' + frame.role + '</span>' +
       '<span class="mv">m' + frame.move + '</span><span class="msg">' + html + '</span>';
+    // Only auto-scroll if the user is already near the bottom — so they can
+    // freely scroll up to re-read earlier dialogue without being yanked down.
+    var atBottom = D.chatEl.scrollHeight - D.chatEl.scrollTop - D.chatEl.clientHeight < 60;
     D.chatEl.appendChild(line);
-    D.chatEl.scrollTop = D.chatEl.scrollHeight;
+    if (atBottom) D.chatEl.scrollTop = D.chatEl.scrollHeight;
 
     // Only the active speaker's bubble shows, so two bubbles never overlap. It
     // carries the full taunt (formatted); the chat panel keeps the history.

@@ -54,7 +54,10 @@ main { display: grid; grid-template-columns: 1fr 360px; min-height: 0; }
   flex-direction: column; min-height: 0; padding: 14px; }
 #panel h2 { margin: 0 0 10px; font-size: 14px; color: #fff; }
 #panel h2 small { color: var(--muted); font-weight: 400; }
-#chat { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding-right: 4px; }
+#chat { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column;
+  gap: 8px; padding-right: 6px; scrollbar-width: thin; scrollbar-color: #2a3a55 transparent; }
+#chat::-webkit-scrollbar { width: 8px; }
+#chat::-webkit-scrollbar-thumb { background: #2a3a55; border-radius: 4px; }
 .chat-line { padding: 8px 10px; border-radius: 10px; background: #0e1524; border-left: 3px solid #233; font-size: 13px; }
 .chat-line.cop { border-left-color: var(--cop); }
 .chat-line.thief { border-left-color: var(--thief); }
