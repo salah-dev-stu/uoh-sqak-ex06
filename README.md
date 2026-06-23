@@ -74,6 +74,10 @@ rival's position **from words alone** — the exact challenge the assignment gra
 |---|---|
 | ![barrier](assets/viewer/barrier.png) | ![capture](assets/viewer/capture-fx.png) |
 
+*The other stills are from the committed **live** Claude-CLI match; the barrier shot is
+from the **deterministic sample** (`make replay`), since the live cop chose to chase
+rather than wall — barrier placement is the agent's strategic choice, not forced.*
+
 ### The orchestration, made visible — MCP message-flow inset
 
 A live overlay shows the architecture in motion: the **Orchestrator (MCP client, holds
