@@ -83,35 +83,31 @@ def main() -> int:
     print(f"  filled docx: {intermediate}")
 
     pdf = REPO / f"{GROUP_CODE}-ex06.pdf"
-    # LibreOffice renders the actual Word document, so the template layout and
-    # Hebrew are preserved exactly (no field re-rendering, no missing-font
-    # rewrites of the ASCII hyphen in the URL). pandoc/xelatex is the fallback.
-    if _convert_soffice(intermediate, pdf) or _convert_pandoc(intermediate, pdf):
-        print(f"  pdf written: {pdf}  ({pdf.stat().st_size:,} bytes)")
-        return 0
-    print("FAIL: no working docx->pdf converter (need soffice or pandoc+xelatex)", file=sys.stderr)
-    return 1
-
-
-def _convert_soffice(docx: Path, pdf: Path) -> bool:
-    if not shutil.which("soffice"):
-        return False
+    # Identical conversion to HW4/HW5 (accepted format): pandoc + xelatex with
+    # Arial Unicode MS. It preserves the ASCII hyphen (U+002D) in URLs and the
+    # group code, which Lucida Grande silently rewrites to U+2011 — breaking
+    # regex URL extraction by an automated grader — and has full Hebrew coverage.
     rc = subprocess.run(
-        ["soffice", "--headless", "--convert-to", "pdf", "--outdir", str(pdf.parent), str(docx)],
-        capture_output=True, text=True,
+        [
+            "pandoc",
+            str(intermediate),
+            "-o",
+            str(pdf),
+            "--pdf-engine=xelatex",
+            "-V",
+            "mainfont=Arial Unicode MS",
+            "-V",
+            "geometry:margin=1in",
+        ],
+        capture_output=True,
+        text=True,
     )
-    return rc.returncode == 0 and pdf.exists()
-
-
-def _convert_pandoc(docx: Path, pdf: Path) -> bool:
-    if not shutil.which("pandoc"):
-        return False
-    rc = subprocess.run(
-        ["pandoc", str(docx), "-o", str(pdf), "--pdf-engine=xelatex",
-         "-V", "geometry:margin=1in"],
-        capture_output=True, text=True,
-    )
-    return rc.returncode == 0 and pdf.exists()
+    if rc.returncode != 0:
+        print("pandoc xelatex failed; STDERR:")
+        print(rc.stderr)
+        return 1
+    print(f"  pdf written: {pdf}  ({pdf.stat().st_size:,} bytes)")
+    return 0
 
 
 if __name__ == "__main__":
