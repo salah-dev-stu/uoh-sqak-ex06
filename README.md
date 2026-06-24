@@ -224,6 +224,8 @@ the committed [`reports/sample_report.json`](reports/sample_report.json) and the
 per-move dispute log [`moves.jsonl`](reports/transcripts/sample/moves.jsonl).
 To wire the real Gmail send (OAuth client + token), follow
 [`docs/GMAIL_SETUP.md`](docs/GMAIL_SETUP.md).
+Real delivery proof: a live run actually emailed the report to the course recipient —
+see [`reports/real_send_proof.md`](reports/real_send_proof.md).
 
 ## 7. Security & remote deployment (H8)
 
