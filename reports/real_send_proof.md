@@ -49,6 +49,14 @@ path already masked by the Gatekeeper's secret redaction:
 The `ts` matches the report's `finished_at`, i.e. the send happened at game end — fully
 autonomous, no manual step (H4).
 
+## Visual proof — the email as delivered in Gmail
+
+![sent email](../assets/sent_email.png)
+
+*The report as delivered in Gmail (skadah324@gmail.com → rmisegal+uoh26b@gmail.com,
+2026-06-24 00:10) — Sent view showing the subject and the non-secret JSON report body
+(team `uoh-sqak`, member IDs, repo link, self-grade). No tokens or credentials appear.*
+
 ## Committed evidence (this folder)
 
 - [`reports/live-send_report.json`](live-send_report.json) — the exact JSON body that was

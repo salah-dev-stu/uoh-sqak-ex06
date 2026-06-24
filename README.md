@@ -227,6 +227,8 @@ To wire the real Gmail send (OAuth client + token), follow
 Real delivery proof: a live run actually emailed the report to the course recipient —
 see [`reports/real_send_proof.md`](reports/real_send_proof.md).
 
+![report email delivered](assets/sent_email.png)
+
 ## 7. Security & remote deployment (H8)
 
 Every server URL is protected by a **bearer token** (`StaticTokenVerifier`), sourced
